@@ -2,15 +2,16 @@
 #
 # Init file for aukspriv ccache from keytab scripted daemon
 #
-# chkconfig: 2345 55 25
+# chkconfig: 2345 60 61
 # description: Auks aukspriv ccache from keytab scripted daemon
 #
 # processname: aukspriv
+# pidfile: /var/run/aukspriv.pid
 
 # source function library
 . /etc/rc.d/init.d/functions
 
-export PATH=${PATH}:/usr/local/sbin
+export PATH=${PATH}:/usr/sbin
 
 typeset program_transform_prefix="s,x,x,"
 if [[ -z ${program_transform_prefix} ]]

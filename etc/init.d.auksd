@@ -2,7 +2,7 @@
 #
 # Init file for Auks daemon
 #
-# chkconfig: 2345 55 25
+# chkconfig: 2345 61 60
 # description: Auks External Kerberos Credential Support Daemon
 #
 # processname: auksd
@@ -12,7 +12,7 @@
 
 export PATH=${PATH}:/usr/sbin
 
-typeset program_transform_prefix="s&^&&"
+typeset program_transform_prefix="s,x,x,"
 if [[ -z ${program_transform_prefix} ]]
     then
     program_transform_prefix="s,^,,"

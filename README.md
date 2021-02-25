@@ -6,24 +6,36 @@ and retrieval of Kerberos TGT.
 
 # Ubuntu 20.04
 
-## Build
+## Install Pre-reqs
+This assumes that you've installed slurm-wlm
 
 ```bash
-apt-get install --yes flex bison libkrb5-dev libtirpc-dev
+apt-get install --yes flex bison libkrb5-dev libtirpc-dev libslurm-dev
+```
+
+## Clone and configure build
+```bash
 mkdir -p ~/git
 pushd ~/git
-git clone https://github.com/hautreux/auks.git
+git clone git@github.com:CGRET/auks.git
 cd auks/
-aclocal && libtoolize --force && automake --add-missing && autoreconf
-./configure
-make
+./autogen.sh
+./configure --prefix=/usr --with-slurm
 ```
 
 ## Install
+```bash
+make
+sudo make install
+```
 
+## Configure installed
 
-## Configure
-
+SLURM plugin for AUKS.
+```bash
+echo "optional /usr/lib/slurm/auks.so default=disabled spankstackcred=no minimum_uid=0 sync=no" >> src/plugins/slurm/slurm-spanks-auks.conf
+sudo cp src/plugins/slurm/slurm-spanks-auks.conf /etc/slurm-llnl/plugstack.conf.d/
+```
 
 ## Test
 

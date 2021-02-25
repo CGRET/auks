@@ -2,7 +2,7 @@
 #
 # Init file for Auks Crendetial renewer daemon
 #
-# chkconfig: 2345 56 24
+# chkconfig: 2345 61 60
 # description: Auks Credentials Renewer Daemon
 #
 # processname: auksdrenewer
@@ -10,7 +10,7 @@
 # source function library
 . /etc/rc.d/init.d/functions
 
-export PATH=${PATH}:/usr/local/sbin
+export PATH=${PATH}:/usr/sbin
 
 typeset program_transform_prefix="s,x,x,"
 if [[ -z ${program_transform_prefix} ]]
