@@ -1,0 +1,2 @@
+AUKSDRENEWER_OPTIONS="-f /etc/auks/auks.conf"
+
