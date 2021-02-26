@@ -76,7 +76,7 @@
 #endif
 
 #ifndef SYSCONFDIR
-#define SYSCONFDIR "/etc"
+#define SYSCONFDIR "/etc/auks"
 #endif
 
 #ifndef LOCALSTATEDIR
