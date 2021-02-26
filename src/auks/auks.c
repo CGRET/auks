@@ -148,7 +148,7 @@ main(int argc,char** argv)
 	else
 		progname++;
 
-	conf_file_string=NULL;
+	conf_file_string="/etc/auks/auks.conf";
 
 	/* process options */
 	while((option = getopt(argc,argv,optstring)) != -1)
@@ -271,8 +271,8 @@ main(int argc,char** argv)
 	auks_api_close(&engine);
 
 exit:
-	if ( conf_file_string != NULL )
-		free(conf_file_string);
+//	if ( conf_file_string != NULL )
+//		free(conf_file_string);
 
 	return fstatus;
 }
